@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Message from './Message';
 
 export default React.createClass({
@@ -6,6 +7,14 @@ export default React.createClass({
     return {
       messages: []
     };
+  },
+
+  /**
+   * scroll to bottom
+   */
+  componentDidUpdate() {
+    var node = ReactDOM.findDOMNode(this);
+    node.scrollTop = node.scrollHeight;
   },
 
   render() {

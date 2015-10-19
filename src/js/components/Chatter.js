@@ -1,6 +1,8 @@
 import React from 'react';
 import MessageListStatic from './MessageListStatic';
 import MessageGenerator from '../MessageGenerator';
+import Input from 'react-bootstrap/lib/Input';
+import _ from 'lodash';
 
 export default React.createClass({
 
@@ -11,7 +13,9 @@ export default React.createClass({
   },
 
   addMessage(message){
-    this.setState({messages: this.state.messages.concat([message])});
+    let _this = this;
+    message = _.extend({date:new Date(), id:_this.state.messages.length}, message);
+    this.setState({messages: _this.state.messages.concat([message])});
   },
 
   componentDidMount(){
@@ -21,16 +25,24 @@ export default React.createClass({
     })
   },
 
-  componentDidUpdate() {
-    var node = this.getDOMNode();
-    node.scrollTop = node.scrollHeight;
-  },
 
+  newMessageKeyDown(event, evt){
+    let _this = this;
+    let text = event.target.value.trim();
+    if (event.key === 'Enter' && text !== ''){
+      _this.addMessage({text:text, author:'__ME__'});
+      event.target.value='';
+    }
+
+  },
   render() {
+    var _this = this;
     return (
       <div className="chatter">
         <MessageListStatic messages={this.state.messages}/>
-        <input />
+        <Input type="text" ref="newMessage"
+               onChange={this.addNewMessage} onKeyDown={this.newMessageKeyDown} label="new message"/>
+
       </div>
     );
   }

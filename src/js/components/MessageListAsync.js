@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import MessageListStatic from './MessageListStatic';
 import MessageGenerator from '../MessageGenerator';
 
@@ -21,10 +22,7 @@ export default React.createClass({
     })
   },
 
-  componentDidUpdate() {
-    var node = this.getDOMNode();
-    node.scrollTop = node.scrollHeight;
-  },
+
 
   render() {
     return (

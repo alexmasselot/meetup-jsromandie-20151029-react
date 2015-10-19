@@ -23,7 +23,6 @@ function render() {
   try {
     const path = window.location.hash.substr(1) || '/';
     const component = routes[path] ;
-    console.log(path, component);
     ReactDOM.render(component, container);
   } catch (err) {
     console.error('ERROR rendering', err);
