@@ -12,7 +12,8 @@ export default React.createClass({
   },
 
   addMessage(message){
-    this.setState({messages: this.state.messages.concat([message])});
+    var _this = this;
+    _this.setState({messages: _this.state.messages.concat([message])});
   },
 
   componentDidMount(){

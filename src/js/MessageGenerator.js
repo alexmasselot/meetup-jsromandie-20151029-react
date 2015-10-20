@@ -17,7 +17,7 @@ class MessageGenerator {
     var _this = this;
     this._names = names || ['Paf', '__ME__'];
 
-
+    this._i=0;
     return _this;
   }
 
@@ -56,7 +56,9 @@ class MessageGenerator {
         return;
       }
       setTimeout(function () {
-        callback(_.extend({id: n-nLeft}, _this.next()));
+        var i = _this._i;
+        _this._i++;
+        callback(_.extend({id: i}, _this.next()));
         asyncHandler(nLeft - 1);
       }, 2 * delay * Math.random());
     };
