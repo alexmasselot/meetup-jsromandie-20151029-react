@@ -1,5 +1,5 @@
 import React from 'react';
-import MessageListStatic from './MessageListStatic';
+import MessageListStatic from './MessageList';
 import MessageGenerator from '../MessageGenerator';
 import Input from 'react-bootstrap/lib/Input';
 import _ from 'lodash';

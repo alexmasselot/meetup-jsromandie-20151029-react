@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import Layout from './components/Layout';
 import MessageGenerator from './MessageGenerator';
 import ACoupleMessages from './components/ACoupleMessages';
-import MessageListStatic from './components/MessageListStatic';
+import MessageListStatic from './components/MessageList';
 import MessageListAsync from './components/MessageListAsync';
 import Chatter from './components/Chatter';
 

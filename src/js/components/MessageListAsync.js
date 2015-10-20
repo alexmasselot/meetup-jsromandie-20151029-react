@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MessageListStatic from './MessageListStatic';
+import MessageListStatic from './MessageList';
 import MessageGenerator from '../MessageGenerator';
 
 export default React.createClass({
