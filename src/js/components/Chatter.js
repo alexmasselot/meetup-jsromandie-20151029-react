@@ -22,11 +22,6 @@ export default React.createClass({
     this.setState({messages: _this.state.messages.concat([message])});
   },
 
-  componentDidMount(){
-    var _this = this;
-  },
-
-
   newMessageKeyDown(event, evt){
     let _this = this;
     let text = event.target.value.trim();
@@ -37,17 +32,18 @@ export default React.createClass({
       _this.messageGenerator.async(2, 200, function (message) {
         _this.addMessage(message);
       });
-
     }
-
   },
+
   render() {
     var _this = this;
     return (
       <div className="chatter">
         <MessageListStatic messages={this.state.messages}/>
-        <Input type="text" ref="newMessage"
-               onChange={this.addNewMessage} onKeyDown={this.newMessageKeyDown} label="new message"/>
+        <Input type="text"
+               ref="newMessage"
+               onKeyDown={this.newMessageKeyDown}
+               label="new message"/>
 
       </div>
     );
