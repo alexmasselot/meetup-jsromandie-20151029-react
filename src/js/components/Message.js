@@ -12,19 +12,24 @@ export default React.createClass({
     };
   },
 
-  handleToggle(task) {
-    if (this.refs.checkbox.getChecked()) {
-      ActionCreator.completeTask(task);
-    }
+  formatDate(date){
+    return ''+date.getHours()+':'+
+      date.getMinutes() +':' +
+      date.getSeconds()+'.'+
+      date.getMilliseconds()
   },
 
   render() {
+    var _this = this;
     var message = this.props.message;
     return (
       <div className={'message-container'+((message.author==='__ME__')?' author-me':'')}>
-        <div className="message">{message.text}</div>
-        <div
-          className="date">{message.date.getHours()}:{message.date.getMinutes()}:{message.date.getSeconds()}.{message.date.getMilliseconds()}</div>
+        <div className="message">
+          {message.text}
+        </div>
+        <div className="date">
+          {_this.formatDate(message.date)}
+        </div>
       </div>
     );
   }
