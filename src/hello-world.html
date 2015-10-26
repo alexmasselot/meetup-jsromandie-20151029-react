@@ -1,0 +1,23 @@
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.min.js"></script>
+</head>
+<body>
+  <b>WTF</b> <span id="target"></span>
+
+
+  <script>
+    var Hello = React.createClass({
+      render: function () {
+        return React.createElement("div", null, "Hello ", this.props.name);
+      }
+    });
+    ReactDOM.render(
+      React.createElement(Hello, {name: "John Doe"}),
+      document.getElementById('target')
+    );
+  </script>
+</body>
+
+</html>

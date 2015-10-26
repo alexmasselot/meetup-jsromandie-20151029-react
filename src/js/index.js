@@ -3,6 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Layout from './components/Layout';
 import MessageGenerator from './MessageGenerator';
+import Hello from './components/Hello';
+import Hello2 from './components/Hello2';
 import ACoupleMessages from './components/ACoupleMessages';
 import MessageListStatic from './components/MessageList';
 import MessageListAsync from './components/MessageListAsync';
@@ -13,6 +15,8 @@ const routes = {
   '/': <Layout>
     <div>Choose an example from above</div>
   </Layout>,
+  '/hello': <Layout title="Hello world"><Hello name="Paf"/></Layout>,
+  '/hello2': <Layout title="Hello world"><Hello2 name="Paf" onClickCallback={function(){window.alert('tchô')}}/></Layout>,
   '/couple-message': <Layout title="A couple of messages">
     <div><ACoupleMessages/></div>
   </Layout>,

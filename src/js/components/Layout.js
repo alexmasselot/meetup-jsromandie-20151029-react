@@ -10,7 +10,7 @@ export default React.createClass({
     return (
       <div className="row">
         <div className="col-md-12">
-          <h2>{this.props.title}</h2>
+          <h3>{this.props.title}</h3>
         </div>
         <div className="col-md-3">
           {this.props.children}

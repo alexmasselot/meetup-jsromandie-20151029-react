@@ -1,6 +1,4 @@
 import React from 'react';
-import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
-import Input from 'react-bootstrap/lib/Input';
 
 export default React.createClass({
   getDefaultProps() {
