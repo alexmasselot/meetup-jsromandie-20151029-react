@@ -4,10 +4,7 @@ export default React.createClass({
   getDefaultProps() {
     return {
       message: {
-        text: 'no_message',
-        author: null,
-        date: null,
-        isFromMe: false
+        text: 'no_message'
       }
     };
   },

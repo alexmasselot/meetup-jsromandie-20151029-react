@@ -23,8 +23,8 @@ class MessageGenerator {
 
   /**
    * return on random message or a an array of them if the n argument is passed
-   * @param n
-   * @returns {*}
+   * @param n  number of message to issue
+   * @returns  an array of messages or a single one if n is undefined 
    */
   next(n) {
     var _this = this;
@@ -45,9 +45,9 @@ class MessageGenerator {
 
   /**
    * produce n random messages, with a random delay iwth average value delay (milliseconds) and fires the callback with each new one.
-   * @param n
-   * @param delay
-   * @param callback
+   * @param n         number of message to issue
+   * @param delay     average delay between message (uniform distribution between 0 and 2*delay)
+   * @param callback  function to call with every new message
    */
   async(n, delay, callback) {
     var _this = this;
