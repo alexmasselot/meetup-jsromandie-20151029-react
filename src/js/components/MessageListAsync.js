@@ -4,7 +4,6 @@ import MessageListStatic from './MessageList';
 import MessageGenerator from '../MessageGenerator';
 
 export default React.createClass({
-
   getInitialState() {
     return {
       messages: []
@@ -22,8 +21,6 @@ export default React.createClass({
       _this.addMessage(message);
     })
   },
-
-
 
   render() {
     return (
